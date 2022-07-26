@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="089cb20f-85a4-483b-885d-66336801ad16">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tbbarang_hadi.`kode_barang` AS tbbarang_hadi_kode_barang,
+     tbbarang_hadi.`nama_barang` AS tbbarang_hadi_nama_barang,
+     tbbarang_hadi.`harga_beli` AS tbbarang_hadi_harga_beli,
+     tbbarang_hadi.`harga_jual` AS tbbarang_hadi_harga_jual,
+     tbbarang_hadi.`jumlah` AS tbbarang_hadi_jumlah
+FROM
+     `tbbarang_hadi` tbbarang_hadi]]>
+	</queryString>
+	<field name="tbbarang_hadi_kode_barang" class="java.lang.String"/>
+	<field name="tbbarang_hadi_nama_barang" class="java.lang.String"/>
+	<field name="tbbarang_hadi_harga_beli" class="java.lang.Float"/>
+	<field name="tbbarang_hadi_harga_jual" class="java.lang.Float"/>
+	<field name="tbbarang_hadi_jumlah" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="-20" y="0" width="595" height="64" uuid="d921e507-0170-48b0-add5-cfbe352ea03c"/>
+				<imageExpression><![CDATA["report/wood.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="5" width="263" height="33" uuid="f6b97b2c-5384-4d31-b0d1-7e11605bec21"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[MINIMARKET HADI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="63" y="39" width="200" height="22" forecolor="#FFFFFF" uuid="efd76e31-7b15-4f7b-a131-c43b25e26491"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Data Stock Barang]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="83cfd72b-f2ef-491c-b425-dca9659243da"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="111" height="15" uuid="f6adeb0d-99fd-445e-b60c-0222ec2c8d24"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Kode Barang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="111" y="19" width="111" height="15" uuid="ab752218-ac4f-41c2-9b8c-ff7692512d38"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Nama barang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="222" y="19" width="111" height="15" uuid="2c177eb2-3d37-4787-9ec3-bce227d78b9d"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Harga Beli]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="333" y="19" width="111" height="15" uuid="0fa1c829-9c7f-4835-a7d7-9be2afdc1dd0"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Harga Jual]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="444" y="19" width="111" height="15" uuid="81f9a6e2-1952-4340-a511-d38fda7848d3"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Stock]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="31cc32e8-0edd-4cf6-9c35-201331ed17c9"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="111" height="15" uuid="453bdb0e-d951-4c87-bbe0-14c5b88270b9"/>
+				<textFieldExpression><![CDATA[$F{tbbarang_hadi_kode_barang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="111" y="0" width="111" height="15" uuid="5d86d7a9-872e-4872-b04b-ac923588accf"/>
+				<textFieldExpression><![CDATA[$F{tbbarang_hadi_nama_barang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="222" y="0" width="111" height="15" uuid="c3b26eca-8c75-4ca4-908b-1b977c6393bb"/>
+				<textFieldExpression><![CDATA[$F{tbbarang_hadi_harga_beli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="333" y="0" width="111" height="15" uuid="a28eb467-0dea-490e-a454-467deae63efc"/>
+				<textFieldExpression><![CDATA[$F{tbbarang_hadi_harga_jual}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="444" y="0" width="111" height="15" uuid="4b5e8ad0-a944-46d1-a0ca-0fdb70f188c1"/>
+				<textFieldExpression><![CDATA[$F{tbbarang_hadi_jumlah}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="23a8e687-6c30-4d9f-b7f4-52c5ef206b19"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="0dfedfdb-8c83-49c3-b834-f13d22d1af98"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="9316f214-39cd-418d-8cd0-dcee30987ac2"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="b5d6b12b-7d5f-4925-8a9a-505c7a447ac4"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
